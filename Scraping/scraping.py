@@ -15,8 +15,6 @@ chrome_options.add_argument('--headless')
 unique_links = set()
 unique_links_post = set()
 
-vectorCommentary = []
-
 #Settings driver Chrome 
 navegador = webdriver.Chrome(options=chrome_options)
 
@@ -35,10 +33,7 @@ def jsonImport(info):
         json.dump(dados_existentes, arquivo, ensure_ascii=False)
         
     dados_existentes.clear()
-
-def clean_text(text): 
-    return ''.join(char for char in text if unicodedata.name(char).isascii())
-
+    
 def getPageSource(url, maxscroll = 1):
     navegador.get(url)
 
