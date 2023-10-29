@@ -64,9 +64,15 @@ def main():
     
     url = f'https://steamcommunity.com/app/730/reviews/?p=1&browsefilter=toprated&filterLanguage={language}'
     
-    soup = getPageSource(url, 1)
+    print("1 Step")
+    
+    soup = getPageSource(url, 500)
     
     recomendation = soup.find_all('div', class_='apphub_CardContentMain')
+    
+    print("2 Step")
+    
+    counter = 0
     
     for getInfo in recomendation:
         
@@ -82,9 +88,7 @@ def main():
         
         datePost = getInfo.find('div', class_='date_posted')
         
-        authorPost = soup.find('div', class_=re.compile(r'apphub_CardContentAuthorName.*')).find_all('a')
-        
-        print(authorPost)
+        authorPost = soup.find_all('div', class_=re.compile(r'apphub_CardContentAuthorName.*'))
         
         for removeTag in awardInforamtion.find_all():
             
@@ -98,9 +102,11 @@ def main():
             
         texto = commentaryPost.get_text(strip=True)
         
-        author = authorPost[1].text
-        
-        urlPerfil = authorPost[1]['href']
+        getText = authorPost[counter].find_all("a")
+
+        author = getText[1].text    
+            
+        urlPerfil = getText[1]['href']
         
         if recommendProduct:
             
@@ -120,7 +126,7 @@ def main():
             
             post['numberAward'] = 'false'   
 
-        print(classificationPost)
+        
         if classificationPost.text == "Not Recommended":
             
             post['classificationPost'] = 'Não recomendado'
@@ -163,8 +169,10 @@ def main():
             
             post['urlPerfil'] = 'false'
         
-        jsonImport(post)
+        counter = counter + 1
         
+        jsonImport(post)
+       
 
 
 main()
