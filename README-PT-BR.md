@@ -12,7 +12,6 @@ Para executar o código, você precisa ter as seguintes bibliotecas Python insta
 - `beautifulsoup4`: Usada para analisar o HTML das páginas da web.
 - `re`: Usada para trabalhar com expressões regulares.
 - `json`: Usada para ler e escrever dados no formato JSON.
-- `unicodedata`: Usada para trabalhar com caracteres Unicode.
   
 Você pode instalar as bibliotecas necessárias usando o seguinte comando:
 
@@ -20,7 +19,6 @@ Você pode instalar as bibliotecas necessárias usando o seguinte comando:
 pip install selenium
 pip install beautifulsoup4
 pip install json
-pip install unicodedata
 ```
 ## Estrutura JSON
 
