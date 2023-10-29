@@ -62,7 +62,7 @@ def main():
     
     language = 'brazilian'
     
-    url = f'https://steamcommunity.com/app/730/reviews/?filterLanguage={language}'
+    url = f'https://steamcommunity.com/app/730/reviews/?p=1&browsefilter=toprated&filterLanguage={language}'
     
     soup = getPageSource(url, 1)
     
