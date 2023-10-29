@@ -12,14 +12,12 @@ To run the code, you need to have the following Python libraries installed:
 - `beautifulsoup4`: Used for parsing web page HTML.
 - `re`: Used for working with regular expressions.
 - `json`: Used for reading and writing data in JSON format.
-- `unicodedata`: Used for working with Unicode characters.
 
 You can install the required libraries using the following command:
 ```
 pip install selenium
 pip install beautifulsoup4
 pip install json
-pip install unicodedata
 ```
 
 ## JSON Structure
