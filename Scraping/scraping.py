@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import re
 from selenium.webdriver.chrome.options import Options
 import json
-import unicodedata
+
 
 # mode headless
 chrome_options = Options()
@@ -33,7 +33,7 @@ def jsonImport(info):
         json.dump(dados_existentes, arquivo, ensure_ascii=False)
         
     dados_existentes.clear()
-    
+
 def getPageSource(url, maxscroll = 1):
     navegador.get(url)
 
